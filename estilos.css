@@ -18,3 +18,7 @@ a[target="_blank"]::after {
 #Experiencia > li{
     list-style: square;
 }
+
+h2 + p {
+    margin-top: 2;
+}
