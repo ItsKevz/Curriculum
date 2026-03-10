@@ -14,3 +14,7 @@ a[target="_blank"]::after {
 #Experiencia li{
     font-size: 0.9em;
 }
+
+#Experiencia > li{
+    list-style: square;
+}
