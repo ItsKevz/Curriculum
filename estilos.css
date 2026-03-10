@@ -20,5 +20,9 @@ a[target="_blank"]::after {
 }
 
 h2 + p {
-    margin-top: 2;
+    margin-top: 2px;
+}
+
+h2 ~ p {
+    color: lightgray;
 }
