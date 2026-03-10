@@ -1,8 +1,16 @@
 p {color: blue;}
+
 li {color: blue;}
+
 .destacado {background-color: yellow;}
+
 #foto-perfil {border: 2px dotted red;}
+
 a[target="_blank"]::after {
     content: " 🔗";
+    font-size: 0.9em;
+}
+
+#Experiencia li{
     font-size: 0.9em;
 }
