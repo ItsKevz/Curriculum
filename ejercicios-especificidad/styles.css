@@ -1,0 +1,73 @@
+
+/*          EJERCICIO 1                   */
+p { color: black; }
+.texto { color: blue; }
+#contenedor p { color: green; }
+#parrafo { color: red; }
+#contenedor .texto { color: purple; }
+
+/*          EJERCICIO 2                   */
+li { color: gray; }
+.item { color: olive; }
+#primero { color: navy; }
+ul li.item { color: teal; }
+li#primero.item { color: fuchsia; }
+
+/*          EJERCICIO 3                   */
+p { color: silver; }
+.resaltado { color: gold; }
+#main p { color: lime; }
+#main .caja p { color: aqua; }
+.caja .resaltado { color: coral; }
+#main .resaltado { color: indigo; }
+
+/*          EJERCICIO 4                   */
+article p { color: brown; }
+.contenido { color: chocolate; }
+#ultimo { color: crimson; }
+article .contenido { color: darkcyan; }
+p#ultimo.contenido { color: darkgoldenrod; }
+
+/*          EJERCICIO 5                   */
+a { color: darkblue; }
+.menu a { color: darkgreen; }
+nav ul li a { color: darkmagenta; }
+#contacto { color: darkorange; }
+.menu li a.enlace { color: darkred; }
+
+/*          EJERCICIO 6                   */
+div { color: darksalmon; }
+.hijo { color: darkseagreen; }
+#padre .hijo { color: darkslateblue; }
+#padre > .hijo { color: darkslategray; }
+#padre .hijo .nieto { color: darkturquoise; }
+
+/*          EJERCICIO 7                   */
+input { border: 1px solid black; }
+.campo { border: 2px solid blue; }
+#registro input { border: 3px solid green; }
+input[type="submit"] { border: 4px solid red; }
+#btn { border: 5px solid purple; }
+
+/*          EJERCICIO 8                   */
+.card { background: lightgray; }
+#card1 .card-title { color: maroon; }
+#card2 .card-text { color: mediumblue; }
+.card .card-title { color: mediumvioletred; }
+.card .card-text { color: midnightblue; }
+
+/*          EJERCICIO 9                   */
+p { color: navy; }
+.seccion p { color: olive; }
+#s1 p { color: orange; }
+#s1 .especial { color: orchid; }
+main .seccion p { color: palegreen; }
+main .seccion .especial { color: paleturquoise; }
+
+/*          EJERCICIO 10                  */
+p { color: peru; }
+.destacado { color: pink; }
+#contenedor p { color: plum; }
+#contenedor .destacado { color: powderblue; }
+.contenedor .interno p { color: rebeccapurple; }
+#contenedor .interno .destacado { color: rosybrown; }

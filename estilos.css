@@ -1,32 +1,34 @@
+/* Kevin Omar Camacho Sánchez - 220110848 - Ingeniería en Sistemas Computacionales */
+/* Actividad 1 */
 p {color: blue;}
 
 li {color: blue;}
 
 .destacado {background-color: yellow;}
-
+/* Actividad 2 */
 #foto-perfil {border: 2px dotted red;}
-
+/* Actividad 3 */
 a[target="_blank"]::after {
     content: " 🔗";
     font-size: 0.9em;
 }
-
+/* Actividad 4 */
 #Experiencia li{
     font-size: 0.9em;
 }
-
+/* Actividad 5 */
 #Experiencia > li{
     list-style: square;
 }
-
+/* Actividad 6 */
 h2 + p {
     margin-top: 2px;
 }
-
+/* Actividad 7 */
 h2 ~ p {
     color: lightgray;
 }
-
+/* Actividad: Desafio */
 .intro p {
     border: 5px solid orange; 
 }

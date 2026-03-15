@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios de Especificidad</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Kevin Omar Camacho Sanchez - 8°A</h1>
+<hr>
+
+<!-- Ejercicio 1 -->
+<section id="ejercicio1">
+<h2>Ejercicio 1</h2>
+<div id="contenedor">
+<p class="texto" id="parrafo">Texto 1</p>
+<p class="texto">Texto 2</p>
+</div>
+<p class="texto">Texto 3</p>
+
+<h3>Preguntas y respuestas - Ejercicio 1</h3>
+<ul>
+  <li><strong>¿De qué color se ve cada párrafo?</strong><br>
+  Si bien debería verse rojo al ejecutarse después un “#contenedor .texto” con color púrpura este se vuelve púrpura ignorando lo anterior debido a la especificidad.<br>
+  → Texto 1: púrpura<br>
+  → Texto 2: púrpura<br>
+  → Texto 3: azul</li>
+  
+  <li><strong>Calcula la especificidad de cada regla.</strong><br>
+  La especificidad se calcula en una especie de arreglo donde cuantos más 1 haya en posiciones más altas más específica es:<br>
+  p → (0,0,0,1)<br>
+  .texto → (0,0,1,0)<br>
+  #contenedor p → (0,1,0,1)<br>
+  #parrafo → (0,1,0,0)<br>
+  #contenedor .texto → (0,1,1,0)</li>
+  
+  <li><strong>Explica por qué se aplica cada color.</strong><br>
+  Como ya había mencionado dependiendo del nivel de especificidad se aplica una u otra por ejemplo los dos primeros elementos son púrpuras debido a que la instrucción “#contenedor .texto” es más específica que las otras y encaja en ambos elementos mientras que el “Texto 3” es azul debido a que se le aplica el “.texto”</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 2 -->
+<section id="ejercicio2">
+<h2>Ejercicio 2</h2>
+<ul>
+<li class="item" id="primero">Elemento 1</li>
+<li class="item">Elemento 2</li>
+<li>Elemento 3</li>
+</ul>
+
+<h3>Preguntas y respuestas - Ejercicio 2</h3>
+<ul>
+  <li><strong>Colores resultantes para cada &lt;li&gt;.</strong><br>
+  Fucsia, teal y gray</li>
+  
+  <li><strong>¿Cuál es la especificidad de la regla 5?</strong><br>
+  La especificidad de “li#primero.item” es (0,1,1,1)</li>
+  
+  <li><strong>¿Qué ocurre si se intercambia el orden de las reglas 4 y 5?</strong><br>
+  Nada, debido a que la especificidad tiene mayor prioridad que el orden de ejecución</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 3 -->
+<section id="ejercicio3">
+<h2>Ejercicio 3</h2>
+<section id="main">
+<div class="caja">
+<p>Texto A</p>
+<p class="resaltado">Texto B</p>
+</div>
+<p class="resaltado">Texto C</p>
+</section>
+
+<h3>Preguntas y respuestas - Ejercicio 3</h3>
+<ul>
+  <li><strong>Determina el color de cada párrafo.</strong><br>
+  Aqua, Aqua e Indigo</li>
+  
+  <li><strong>Identifica qué reglas tienen la misma especificidad y cómo se resuelve.</strong><br>
+  En este caso no hay ninguna con el mismo nivel de especificidad pero en caso de que lo hubiera se resuelve por orden de ejecución.</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 4 -->
+<section id="ejercicio4">
+<h2>Ejercicio 4</h2>
+<article>
+<h2 class="titulo">Título</h2>
+<p class="contenido">Párrafo 1</p>
+<p class="contenido" id="ultimo">Párrafo 2</p>
+</article>
+
+<h3>Preguntas y respuestas - Ejercicio 4</h3>
+<ul>
+  <li><strong>Colores de cada elemento.</strong><br>
+  El título no tiene regla específica (se ve negro por defecto), el párrafo 1 se ve darkcyan y el párrafo 2 se ve darkgoldenrod.</li>
+  
+  <li><strong>¿Qué regla se aplica al párrafo con id "ultimo"? ¿Por qué?</strong><br>
+  Se aplica la regla p#ultimo.contenido porque tiene mayor especificidad (0,1,1,1) que #ultimo y que article .contenido.</li>
+  
+  <li><strong>Si se añade !important a la regla 2, ¿cambia algo? ¿Por qué?</strong><br>
+  Sí, el párrafo 1 y el párrafo 2 se verían chocolate, porque !important fuerza la aplicación de esa regla sin importar la especificidad.</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 5 -->
+<section id="ejercicio5">
+<h2>Ejercicio 5</h2>
+<nav>
+<ul class="menu">
+<li><a href="#" class="enlace">Inicio</a></li>
+<li><a href="#">Servicios</a></li>
+<li><a href="#" id="contacto">Contacto</a></li>
+</ul>
+</nav>
+
+<h3>Preguntas y respuestas - Ejercicio 5</h3>
+<ul>
+  <li><strong>Colores de cada enlace.</strong><br>
+  Inicio se ve darkred, Servicios se ve darkgreen y Contacto se ve darkorange.</li>
+  
+  <li><strong>Calcula la especificidad de la regla 5.</strong><br>
+  La regla .menu li a.enlace tiene especificidad (0,0,2,2).</li>
+  
+  <li><strong>¿Qué enlace se ve afectado por la regla 4? ¿Por qué?</strong><br>
+  El enlace de Contacto, porque tiene el id “contacto” y la regla #contacto tiene mayor especificidad que las otras que aplican a enlaces dentro de .menu.</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 6 -->
+<section id="ejercicio6">
+<h2>Ejercicio 6</h2>
+<div id="padre">
+<div class="hijo">
+<p class="nieto">Texto X</p>
+</div>
+<p class="hijo">Texto Y</p>
+</div>
+
+<h3>Preguntas y respuestas - Ejercicio 6</h3>
+<ul>
+  <li><strong>Colores de “Texto X” y “Texto Y”.</strong><br>
+  Texto X se ve darkturquoise y Texto Y se ve darkslategray.</li>
+  
+  <li><strong>Explica la diferencia entre las reglas 3 y 4.</strong><br>
+  La regla 3 (#padre .hijo) aplica a cualquier descendiente con clase hijo, mientras que la regla 4 (#padre > .hijo) solo aplica a hijos directos. En Texto Y ambas coinciden pero la 4 es posterior y gana.</li>
+  
+  <li><strong>¿Cuál es la especificidad de la regla 5?</strong><br>
+  La regla #padre .hijo .nieto tiene especificidad (0,1,2,0).</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 7 -->
+<section id="ejercicio7">
+<h2>Ejercicio 7</h2>
+<form id="registro">
+<input type="text" name="usuario" class="campo">
+<input type="password" name="clave" class="campo">
+<input type="submit" value="Enviar" id="btn">
+</form>
+
+<h3>Preguntas y respuestas - Ejercicio 7</h3>
+<ul>
+  <li><strong>¿Qué grosor y color de borde tiene cada input?</strong><br>
+  Los campos de texto y contraseña tienen borde 3px solid green, mientras que el botón tiene borde 5px solid purple.</li>
+  
+  <li><strong>Ordena las reglas por especificidad de menor a mayor.</strong><br>
+  input (0,0,0,1)<br>
+  .campo (0,0,1,0)<br>
+  input[type="submit"] (0,0,1,1)<br>
+  #registro input (0,1,0,1)<br>
+  #btn (0,1,0,0)</li>
+  
+  <li><strong>¿Qué pasa si se añade !important a la regla 1?</strong><br>
+  Todos los inputs tendrían borde 1px solid black, porque !important sobrepasa cualquier otra regla.</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 8 -->
+<section id="ejercicio8">
+<h2>Ejercicio 8</h2>
+<div class="card" id="card1">
+<h3 class="card-title">Título 1</h3>
+<p class="card-text">Texto 1</p>
+</div>
+<div class="card" id="card2">
+<h3 class="card-title">Título 2</h3>
+<p class="card-text">Texto 2</p>
+</div>
+
+<h3>Preguntas y respuestas - Ejercicio 8</h3>
+<ul>
+  <li><strong>Colores de títulos y textos en cada card.</strong><br>
+  Card1: título maroon, texto midnightblue.<br>
+  Card2: título mediumvioletred, texto mediumblue.</li>
+  
+  <li><strong>¿Qué reglas tienen la misma especificidad? ¿Cómo se resuelve?</strong><br>
+  Las reglas .card-title y .card-text tienen la misma especificidad (0,0,2,0). Se resuelve por orden de aparición en el CSS.</li>
+  
+  <li><strong>Si se añade un estilo en línea al título de card1 con color: orange, ¿qué ocurre?</strong><br>
+  El título se vería naranja, porque los estilos en línea tienen mayor prioridad que cualquier regla externa.</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 9 -->
+<section id="ejercicio9">
+<h2>Ejercicio 9</h2>
+<main>
+<section class="seccion" id="s1">
+<p>Párrafo 1</p>
+<p class="especial">Párrafo 2</p>
+</section>
+<section class="seccion">
+<p>Párrafo 3</p>
+</section>
+</main>
+
+<h3>Preguntas y respuestas - Ejercicio 9</h3>
+<ul>
+  <li><strong>Colores de cada párrafo.</strong><br>
+  Párrafo 1 se ve orange, párrafo 2 se ve orchid y párrafo 3 se ve palegreen.</li>
+  
+  <li><strong>¿Qué regla se aplica al párrafo con clase "especial" dentro de #s1?</strong><br>
+  Se aplica #s1 .especial, porque es más específica que .especial y que main .seccion .especial.</li>
+  
+  <li><strong>¿Cuál es la especificidad de la regla 6?</strong><br>
+  La regla main .seccion .especial tiene especificidad (0,0,2,1).</li>
+</ul>
+</section>
+<hr>
+
+<!-- Ejercicio 10 -->
+<section id="ejercicio10">
+<h2>Ejercicio 10</h2>
+<div class="contenedor" id="contenedor">
+<p>Párrafo A</p>
+<div class="interno">
+<p class="destacado">Párrafo B</p>
+</div>
+<p class="destacado">Párrafo C</p>
+</div>
+
+<h3>Preguntas y respuestas - Ejercicio 10</h3>
+<ul>
+  <li><strong>Colores de “Párrafo A”, “Párrafo B” y “Párrafo C”.</strong><br>
+  Párrafo A se ve plum, Párrafo B se ve rosybrown y Párrafo C se ve powderblue.</li>
+  
+  <li><strong>Explica por qué “Párrafo B” no toma el color de la regla 6 si tiene clase destacado y está dentro de .interno.</strong><br>
+  En realidad SÍ toma el color de la regla 6 (rosybrown) porque #contenedor .interno .destacado es la más específica que aplica.</li>
+  
+  <li><strong>¿Qué regla tiene mayor especificidad? Ordénalas de mayor a menor.</strong><br>
+  #contenedor .interno .destacado (0,1,2,0)<br>
+  #contenedor p (0,1,0,1)<br>
+  #contenedor .destacado (0,1,1,0)<br>
+  .contenedor .interno p (0,0,2,1)<br>
+  .destacado (0,0,1,0)<br>
+  p (0,0,0,1)</li>
+</ul>
+</section>
+
+</body>
+</html>
