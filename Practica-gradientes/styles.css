@@ -53,6 +53,14 @@ li::before {
   border-radius: 50%;
 }
 
+.img-container {
+  position: relative;
+  display: inline-block;
+}
+.img-container img {
+  display: block;
+}
+
 .img-container::after {
   content: "";
   position: absolute;
