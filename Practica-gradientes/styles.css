@@ -11,4 +11,16 @@ header {
  margin-top: 10px;
 }
 
+/* Elementos Inline */
+.inline {
+ background: radial-gradient(circle, yellow, orange);
+ padding: 5px;
+}
 
+.link-gradiente {
+ display: inline-block;
+ background: linear-gradient(to right, cyan, blue);
+ padding: 5px 10px;
+ color: white;
+ text-decoration: none;
+}
