@@ -42,6 +42,13 @@ header {
 }
 
 /* pseudo-elementos */
+li {
+  list-style: none;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+
 li::before {
   content: "";
   position: absolute;
