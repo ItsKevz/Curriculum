@@ -59,3 +59,10 @@ li::before {
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
+
+/*Bordes */
+.borde-gradiente {
+  border: 5px solid;
+  border-image: linear-gradient(45deg, red, blue) 1;
+  padding: 20px;
+}
