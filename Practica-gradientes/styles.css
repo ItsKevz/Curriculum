@@ -40,3 +40,22 @@ header {
  color: white;
  cursor: pointer;
 }
+
+/* pseudo-elementos */
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(45deg, purple, cyan);
+  border-radius: 50%;
+}
+
+.img-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
