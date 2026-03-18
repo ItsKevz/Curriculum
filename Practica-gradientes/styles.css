@@ -66,3 +66,10 @@ li::before {
   border-image: linear-gradient(45deg, red, blue) 1;
   padding: 20px;
 }
+
+/* Texto */
+.texto-gradiente {
+  background: linear-gradient(45deg, #f06, #f90);
+  -webkit-background-clip: text;
+  color: transparent;
+}
