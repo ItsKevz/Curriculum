@@ -86,3 +86,20 @@ tbody td {
     background-color: var(--fondo-celda);
     min-width: 150px;
 }
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background-color: var(--fondo-celda);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+tbody tr:hover td {
+    background-color: #f0f0f0;
+}
+
+td[contenteditable="true"]:empty::before {
+    content: "\00a0";
+}
