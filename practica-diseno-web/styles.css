@@ -1,0 +1,88 @@
+:root {
+    --amarillo-principal: #FFFF00;
+    --borde-negro: #000000;
+    --texto-oscuro: #1A1A1A;
+    --fondo-gris: #F3F4F6;
+    --fondo-celda: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--fondo-gris);
+    color: var(--texto-oscuro);
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitulo {
+    color: #666;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    table-layout: fixed;
+}
+
+thead th {
+    background-color: var(--amarillo-principal);
+    border: 1px solid var(--borde-negro);
+    padding: 8px;
+    text-align: left;
+    height: 80px;
+    font-weight: 700;
+    overflow: hidden;
+    word-break: break-word;
+    width: 10%;
+}
+
+thead th:nth-child(3),
+thead th:nth-child(9) {
+    width: 30px;
+}
+
+.indice {
+    text-align: center;
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+tbody tr {
+    height: 45px;
+}
+
+tbody td {
+    border: 1px solid var(--borde-negro);
+    padding: 8px;
+    vertical-align: top;
+    overflow: hidden;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+.celda-fija {
+    background-color: var(--fondo-celda);
+    min-width: 150px;
+}
