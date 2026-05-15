@@ -1,0 +1,19 @@
+FROM oven/bun:1-alpine AS deps
+RUN addgroup -S bunuser && adduser -S -D -H -h /dev/null -s /sbin/nologin -G bunuser bunuser
+WORKDIR /app
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile --production
+FROM oven/bun:1-alpine AS builder
+RUN addgroup -S bunuser && adduser -S -D -H -h /dev/null -s /sbin/nologin -G bunuser bunuser
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+RUN bun build ./src/index.ts --outdir ./dist --target bun
+FROM oven/bun:1-alpine AS production
+RUN addgroup -S bunuser && adduser -S -D -H -h /dev/null -s /sbin/nologin -G bunuser bunuser
+WORKDIR /app
+COPY --from=builder /app/dist ./dist
+COPY --from=deps /app/node_modules ./node_modules
+USER bunuser
+EXPOSE 3000
+CMD ["bun", "run", "./dist/index.js"]   
